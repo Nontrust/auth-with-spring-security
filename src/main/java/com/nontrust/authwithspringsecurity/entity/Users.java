@@ -20,4 +20,8 @@ public class Users {
     @Column
     private String password;
 
+    public Users(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
 }

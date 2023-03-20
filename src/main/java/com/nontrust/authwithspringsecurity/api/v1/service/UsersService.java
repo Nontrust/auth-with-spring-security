@@ -19,7 +19,7 @@ public class UsersService {
     private final UsersRepository usersRepository;
     private final Response response;
 
-    public ResponseEntity<?> SignUp(UserRequestDto.SignUp signUpDto) {
+    public ResponseEntity<?> signUp(UserRequestDto.SignUp signUpDto) {
         Users users = Users.builder()
                 .email(signUpDto.getEmail())
                 .password(signUpDto.getPassword())
@@ -30,7 +30,6 @@ public class UsersService {
 
     public ResponseEntity<?> login(UserRequestDto.SignUp signUp) {
         Optional<Users> user = usersRepository.findByEmailAndPassword(signUp.getEmail(), signUp.getPassword());
-
         if(user.isEmpty()) {
             return response.fail("로그인에 실패했습니다.");
         }

@@ -33,7 +33,7 @@ public class UsersController {
         if(errors.hasErrors()){
             return response.invalidFields(errors);
         }
-        return usersService.SignUp(signUp);
+        return usersService.signUp(signUp);
     }
 
 }
