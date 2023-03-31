@@ -1,5 +1,6 @@
 package com.nontrust.authwithspringsecurity.api.v1.dto.request;
 
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,9 +12,9 @@ public class UserRequestDto {
     @Getter
     @Setter
     public static class SignUp{
-        @NotNull
+        @NotEmpty(message = "아이디를 입력해 주세요.")
         private String email;
-        @NotNull
+        @NotEmpty(message = "비밀번호를를 입력해 주세요.")
         private String password;
     }
 }

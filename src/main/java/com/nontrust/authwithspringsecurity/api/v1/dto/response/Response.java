@@ -51,7 +51,7 @@ public class Response {
     }
 
     public ResponseEntity<?> fail(String msg){
-        return success(msg, Collections.emptyList(), BAD_REQUEST);
+        return success(msg, Collections.emptyList(), OK);
     }
 
     public ResponseEntity<?> invalidFields(Errors errors) {
